@@ -8,7 +8,7 @@ export default function ProductsPage() {
         return products.map((product)=>{
             return <div key={product.name} className='products-container' onClick={()=>handleClickProduct(product.id)}>
                 <h2>{product.name}</h2>
-                <h3>{product.price}</h3>
+                <h3>{product.price}$</h3>
             </div>
         })
     }

@@ -7,9 +7,9 @@ export default function index() {
     const productId = router.query.product
   return (
       <div>
-          <h2>{products[productId].name}</h2>
-          <h3>{products[productId].price}</h3>
-          <p>{products[productId].description}</p>
+          <h2>{products[productId-1].name}</h2>
+          <h3>{products[productId-1].price}$</h3>
+          <p>{products[productId-1].description}</p>
       </div>
   );
 }
