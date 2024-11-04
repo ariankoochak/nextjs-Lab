@@ -1,5 +1,5 @@
 export default function index() {
   return (
-    <div>index</div>
+    <div className="container">this is main Page!</div>
   )
 }

@@ -64,3 +64,7 @@ header a {
   font-size: 30px;
   font-weight: 900;
 }
+
+.container{
+    padding: 2rem;
+}
