@@ -9,7 +9,7 @@ export default function GeneralLayout({ children }) {
                     <Link href="/">HOME</Link>
                     <Link href="/about">About</Link>
                     <Link href="/contact">Contact</Link>
-                    <Link href="/products">Products</Link>
+                    <Link href="/users">Users</Link>
                 </nav>
             </header>
             <div className="container">{children}</div>
