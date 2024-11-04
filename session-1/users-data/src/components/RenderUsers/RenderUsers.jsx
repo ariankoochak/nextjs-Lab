@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 export default function RenderUsers({users}) {
   const router = useRouter();
   const handleClickUser = (userId)=>{
-      router.push(`/${userId}`)
+      router.push(`/users/${userId}`)
   }
   const renderUsers = (usersList)=>{
     return usersList.map((user)=>{
