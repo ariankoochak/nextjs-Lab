@@ -11,7 +11,6 @@ export default function index() {
             url: API,
         })
             .then((response) => {
-                console.log(response.data.results);
                 if (response.status === 200) {
                     setUsers(response.data.results);
                 }
