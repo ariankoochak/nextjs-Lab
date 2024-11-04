@@ -68,3 +68,26 @@ header a {
 .container{
     padding: 2rem;
 }
+
+.users-container{
+  text-align: center;
+}
+
+.user-container{
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 12px;
+  border: 2px solid #222;
+}
+
+.user-container .user-image-container{
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.user-container .user-image-container img{
+  width: 100%;
+}
