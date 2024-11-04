@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function App({ Component, pageProps }) {
   const pathname = usePathname();
-  console.log(pathname);
-  console.log(/^\/users.*?$/.test(pathname));
   const Layout = /^\/users.*?$/.test(pathname) ? UsersLayout : GeneralLayout;
   return (
     <Layout>
