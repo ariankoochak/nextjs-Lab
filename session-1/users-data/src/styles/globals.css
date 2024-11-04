@@ -86,8 +86,17 @@ header a {
   display: inline-block;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 300px;
 }
 
 .user-container .user-image-container img{
   width: 100%;
+}
+
+.user-page-image-container{
+  position: relative;
+  width: 400px;
+  height: 400px;
 }

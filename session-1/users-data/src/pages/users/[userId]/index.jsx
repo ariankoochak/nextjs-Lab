@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 export default function index() {
     const router = useRouter();
@@ -34,7 +35,7 @@ export default function index() {
         return (
             <div className="container">
                 <div className="user-page-image-container">
-                    <img src={user.image} alt={user.name} />
+                    <Image src={user.image} alt={user.name} fill/>
                 </div>
                 <div className="user-page-data-container">
                     <h2>{user.name}</h2>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router"
 
 export default function RenderUsers({users}) {
@@ -10,7 +11,7 @@ export default function RenderUsers({users}) {
         return(
           <div className="user-container" onClick={()=>handleClickUser(user.id)}>
             <div className="user-image-container">
-              <img src={user.image} alt={user.name}/>
+              <Image src={user.image} alt={user.name} fill/>
             </div>
             <h4>{user.name}</h4>
           </div>
