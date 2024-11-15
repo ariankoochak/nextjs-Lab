@@ -12,11 +12,11 @@ const Handler = (req,res)=>{
     const seconds = String(now.getSeconds()).padStart(2, "0");
     
 
-    const dir = path.resolve('public/log.csv')
+    const dir = path.resolve('public/log.csv');
 
     fs.appendFileSync(
         dir,
-        `${statusCode} | ${url} | ${endpoint} | ${year}-${month}-${day} ${hours}:${minutes}:${seconds},\n`
+        `${statusCode} , ${url} , ${endpoint} , ${year}-${month}-${day} ${hours}:${minutes}:${seconds},\n`
     );
     
     res.send('ok!');
