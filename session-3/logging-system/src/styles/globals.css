@@ -1,0 +1,102 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  margin-right: 2rem;
+}
+
+header a {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.container{
+    padding: 2rem;
+}
+
+.users-container{
+  text-align: center;
+}
+
+.user-container{
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 12px;
+  border: 2px solid #222;
+}
+
+.user-container .user-image-container{
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.user-container .user-image-container img{
+  width: 100%;
+}
+
+.user-page-image-container{
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
