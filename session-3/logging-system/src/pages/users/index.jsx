@@ -18,7 +18,7 @@ export default function index() {
                 }
             })
             .catch((error) => {
-                // genLog(error.status, "rickandmortyapi.com/api/character","localHost/users");
+                genLog(error.status, "rickandmortyapi.com/api/character","localHost/users");
                 console.log(error);
             });
     };
