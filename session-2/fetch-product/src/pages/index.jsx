@@ -1,9 +1,15 @@
+import { useRouter } from "next/router";
+
 export default function index({ characters }) {
+    const router = useRouter();
+    const handleClickUser = (id) => {
+        router.push(`user/${id}`);
+    };
     return (
         <div className="main-container">
             {characters.map((character) => {
                 return (
-                    <div className="user-container" key={character.name}>
+                    <div className="user-container" key={character.name} onClick={()=>handleClickUser(character.id)}>
                         <div className="user-image">
                             <img src={character.image} alt={character.name} />
                         </div>
