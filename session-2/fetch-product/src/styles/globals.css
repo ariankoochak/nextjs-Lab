@@ -1,11 +1,11 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #292929;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #292929;
     --foreground: #ededed;
   }
 }
@@ -24,6 +24,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img{
+  width: 100%;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -39,4 +44,21 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.main-container{
+  text-align: center;
+}
+
+.user-container{
+  display: inline-block;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: black;
+}
+
+.user-container .user-image img{
+  border-radius: 8px;
 }
