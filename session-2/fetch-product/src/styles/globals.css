@@ -62,3 +62,40 @@ a {
 .user-container .user-image img{
   border-radius: 8px;
 }
+
+.user-page{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.user{
+  padding: 1rem;
+  border-radius: 12px;
+  display: inline-block;
+  background-color: black;
+}
+
+.user .image img{
+  border-radius: 8px;
+}
+
+.user .datas{
+  margin: 10px 0;
+}
+
+.user .datas .name{
+  margin-bottom: 10px;
+}
+
+.button-container{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.button-container button{
+  background-color: red;
+  border-radius: 8px;
+  border: none;
+  padding: 0.5rem 7.6rem;
+  cursor: pointer;
+}
