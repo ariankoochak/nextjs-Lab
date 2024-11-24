@@ -106,3 +106,22 @@ img{
   border: none;
   cursor: pointer;
 }
+
+.product-page{
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.product-page .image-container{
+  display: inline-block;
+  width: 300px;
+}
+
+.product-page .data-container{
+  text-align: left;
+  display: inline-block;
+  width: 500px;
+  margin-left: 2rem;
+}
