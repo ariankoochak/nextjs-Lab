@@ -1,15 +1,17 @@
-import ProductCard from "@/components/ProductCard/ProductCard";
-import useSWR from "swr"
+import { useRouter } from "next/router"
 
 export default function index() {
-  const { data, isLoading, error } = useSWR({ url: "/products" , method : 'get'});
-
-  if(isLoading) 
-    return <div>Loading...</div>
-  
+  const router = useRouter();
+  const handleClickAdminPanel = ()=>{
+    router.push('/admin')
+  }
+    const handleClickProducts = () => {
+        router.push("/products/all");
+    };
   return (
-      <>
-      index
-      </>
+      <div className="main-page">
+          <button className="category-btn" onClick={handleClickAdminPanel}>admin panel</button>
+          <button className="category-btn" onClick={handleClickProducts}>products</button>
+      </div>
   );
 }
