@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 
 const Handler = (req,res)=>{
+
+    
     const dir = path.resolve("public/log.csv");
     let result = fs.readFileSync(dir);
     result = result.toLocaleString();
@@ -10,7 +12,28 @@ const Handler = (req,res)=>{
         return row.split(',')
     })
 
-    res.send('not finished this api')
+
+    const {route} = req.query;
+    console.log(route);
+    
+    
+    
+    const expData = []
+    const today = new Date();
+    for (let i = 0; i < 7; i++) {
+        const date = new Date();
+        date.setDate(today.getDate() - i);
+        const checkDate = date.toISOString().split("T")[0];
+        let counter = 0
+        for(const row of result){
+            const rowDate = new Date(+row[1]);     
+            if(checkDate == rowDate.toISOString().split("T")[0] && row[0].trim() == route.trim()){
+                counter++;
+            }
+        }
+        expData.push(counter)
+    }    
+    res.send(expData)
 }
 
 export default Handler;
