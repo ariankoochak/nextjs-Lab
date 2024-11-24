@@ -14,7 +14,7 @@ const Handler = (req,res)=>{
 
 
     const {route} = req.query;
-    console.log(route);
+    
     
     
     
@@ -27,7 +27,7 @@ const Handler = (req,res)=>{
         let counter = 0
         for(const row of result){
             const rowDate = new Date(+row[1]);     
-            if(checkDate == rowDate.toISOString().split("T")[0] && row[0].trim() == route.trim()){
+            if(checkDate == rowDate.toISOString().split("T")[0] && row[0].trim() == encodeURI(route).trim()){
                 counter++;
             }
         }
