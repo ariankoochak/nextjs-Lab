@@ -35,14 +35,16 @@ export default function index({ categories, products }) {
     },[selectedRecordTitle])
     
     const options = {
+        chart: {
+            type: "column",
+        },
         title: {
             text: selectedRecordTitle,
         },
 
         accessibility: {
             point: {
-                valueDescriptionFormat:
-                    "{xDescription}{separator}{value}",
+                valueDescriptionFormat: "{xDescription}{separator}{value}",
             },
         },
 
@@ -79,7 +81,6 @@ export default function index({ categories, products }) {
                     },
                     stops: [
                         [0, "#0000ff"],
-                        [1, "#ff0000"],
                     ],
                 },
             },
