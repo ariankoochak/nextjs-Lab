@@ -95,26 +95,47 @@ export default function index({ categories, products }) {
         setSelectedRecordTitle(`product-${productId}`);
     };
     return (
-        <div className="admin">
-            <h2>Report</h2>
-            <div className="container">
-                <h3>Category Page</h3>
-                <div className="admin-categories-btn-container">
-                    {categories.map((category) => {
-                        return <button onClick={()=>handleClickCategoryButton(category)}>{category}</button>;
-                    })}
+        <>
+            <div className="admin">
+                <h2>Report</h2>
+                <div className="container">
+                    <h3>Category Page</h3>
+                    <div className="admin-categories-btn-container">
+                        {categories.map((category) => {
+                            return (
+                                <button
+                                    onClick={() =>
+                                        handleClickCategoryButton(category)
+                                    }
+                                >
+                                    {category}
+                                </button>
+                            );
+                        })}
+                    </div>
                 </div>
-            </div>
-            <div className="container">
-                <h3>Products Page</h3>
-                <div className="admin-products-btn-container">
-                    {products.map((product) => {
-                        return <button onClick={()=>handleClickProductButton(product.title,product.id)}>{product.title}</button>;
-                    })}
+                <div className="container">
+                    <h3>Products Page</h3>
+                    <div className="admin-products-btn-container">
+                        {products.map((product) => {
+                            return (
+                                <button
+                                    onClick={() =>
+                                        handleClickProductButton(
+                                            product.title,
+                                            product.id
+                                        )
+                                    }
+                                >
+                                    {product.title}
+                                </button>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
             <HighchartsReact highcharts={Highcharts} options={options} />
-        </div>
+        </>
     );
 }
 
