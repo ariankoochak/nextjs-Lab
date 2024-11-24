@@ -18,17 +18,33 @@ export default function category({ products }) {
     },[])
     return (
         <>
-        <div>
-            <button onClick={()=>{handleClickCategory('all')}}>All product</button>
-            {categories.map((categoryName)=>{
-                return <button onClick={()=>{handleClickCategory(categoryName)}}>{categoryName}</button>
-            })}
-        </div>
-        <section className="row">
-            {products.map((item) => (
-                <ProductCard item={item} key={item.id} />
-            ))}
-        </section>
+            <div className="category-btn-container">
+                <button
+                    className="category-btn"
+                    onClick={() => {
+                        handleClickCategory("all");
+                    }}
+                >
+                    All product
+                </button>
+                {categories.map((categoryName) => {
+                    return (
+                        <button
+                            className="category-btn"
+                            onClick={() => {
+                                handleClickCategory(categoryName);
+                            }}
+                        >
+                            {categoryName}
+                        </button>
+                    );
+                })}
+            </div>
+            <section className="row">
+                {products.map((item) => (
+                    <ProductCard item={item} key={item.id} />
+                ))}
+            </section>
         </>
     );
 }

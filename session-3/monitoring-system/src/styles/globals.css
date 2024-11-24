@@ -92,6 +92,10 @@ img{
   border-radius: 4px;
 }
 
+.category-btn-container{
+  text-align: center;
+}
+
 .category-btn {
   background-color: #0072bc;
   padding: 1rem;
@@ -100,4 +104,5 @@ img{
   color: white;
   outline: none;
   border: none;
+  cursor: pointer;
 }
