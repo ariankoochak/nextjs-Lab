@@ -1,5 +1,4 @@
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
+import PageChart from "@/components/PageChart/PageChart";
 import { useEffect, useState } from "react";
 
 export default function index({ categories, products }) {
@@ -34,59 +33,6 @@ export default function index({ categories, products }) {
         getData();
     },[selectedRecordTitle])
     
-    const options = {
-        chart: {
-            type: "column",
-        },
-        title: {
-            text: selectedRecordTitle,
-        },
-
-        accessibility: {
-            point: {
-                valueDescriptionFormat: "{xDescription}{separator}{value}",
-            },
-        },
-
-        xAxis: {
-            title: {
-                text: "Date",
-            },
-            categories: getLast7Days(),
-        },
-
-        yAxis: {
-            type: "logarithmic",
-            title: {
-                text: "Number of view",
-            },
-        },
-
-        tooltip: {
-            headerFormat: "<b>{series.name}</b><br />",
-            pointFormat: "{point.y}",
-        },
-
-        series: [
-            {
-                name: "Views",
-                keys: ["y"],
-                data: viewData,
-                color: {
-                    linearGradient: {
-                        x1: 0,
-                        x2: 0,
-                        y1: 1,
-                        y2: 0,
-                    },
-                    stops: [
-                        [0, "#0000ff"],
-                    ],
-                },
-            },
-        ],
-    };
-
     const handleClickCategoryButton = (categoryName)=>{
         setSelectedRecordTitle(`category-${categoryName}`)
     }
@@ -134,7 +80,11 @@ export default function index({ categories, products }) {
                     </div>
                 </div>
             </div>
-            <HighchartsReact highcharts={Highcharts} options={options} />
+            <PageChart
+                last7DaysArray={getLast7Days()}
+                valuesArray={viewData}
+                title={selectedRecordTitle}
+            />
         </>
     );
 }
