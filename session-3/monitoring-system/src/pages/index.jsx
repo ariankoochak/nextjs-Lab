@@ -8,10 +8,8 @@ export default function index() {
     return <div>Loading...</div>
   
   return (
-      <section className="row">
-          {data.map((item) => (
-              <ProductCard item={item} key={item.id} />
-          ))}
-      </section>
+      <>
+      index
+      </>
   );
 }
