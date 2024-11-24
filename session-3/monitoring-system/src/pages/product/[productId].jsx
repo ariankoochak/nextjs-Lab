@@ -1,7 +1,11 @@
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
+import useSWR from "swr";
 
 export default function productId({ product }) {
     const router = useRouter();
+    const pathname = usePathname();
+    useSWR({ url: "/addLog", method: "post", route: pathname });
     const handleClickCategoryBtn = () => {
         router.push(`/products/${product.category}`);
     };

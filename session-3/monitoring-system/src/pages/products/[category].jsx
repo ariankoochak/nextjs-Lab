@@ -1,10 +1,14 @@
 import ProductCard from "@/components/ProductCard/ProductCard";
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 export default function category({ products }) {
     const [categories , setCategories] = useState([]);
+    const pathname = usePathname();
     const router = useRouter();
+    useSWR({url : '/addLog' , method : "post" , route : pathname})
     const getCategories = async ()=>{
         const response = await fetch('https://fakestoreapi.com/products/categories');
         const data = await response.json();
