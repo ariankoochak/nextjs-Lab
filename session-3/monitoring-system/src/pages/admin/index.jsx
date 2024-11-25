@@ -1,22 +1,10 @@
 import PageChart from "@/components/PageChart/PageChart";
+import getLast7Days from "@/services/getLast7Days";
 import { useEffect, useState } from "react";
 
 export default function index({ categories, products }) {
     const [selectedRecordTitle,setSelectedRecordTitle] = useState('category-all');
     const [viewData,setViewData] = useState([])
-    function getLast7Days() {
-        const days = [];
-        const today = new Date();
-
-        for (let i = 0; i < 7; i++) {
-            const date = new Date();
-            date.setDate(today.getDate() - i);
-            days.push(date.toISOString().split("T")[0]);
-        }
-
-        return days.reverse();
-    }
-
     const getData = async ()=>{
         let separatedRecordTitle = selectedRecordTitle.split("-");
         const basePath =
