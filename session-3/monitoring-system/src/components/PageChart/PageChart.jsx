@@ -56,6 +56,9 @@ export default function PageChart({last7DaysArray , valuesArray,title}) {
         ],
     };
 
+    console.log(valuesArray);
+    
+
     return (
         <>
             <HighchartsReact highcharts={Highcharts} options={options} />

@@ -23,7 +23,7 @@ export default function index({ categories, products }) {
             separatedRecordTitle[0] === "category" ? "/products" : "/product";
         const dynamicPath = encodeURI(separatedRecordTitle[1]);
         const response = await fetch(
-            `http://localhost:3000/api/getLog/in-week?route=${basePath}/${dynamicPath}`
+            `http://localhost:3000/api/getLog/last-week?route=${basePath}/${dynamicPath}`
         );
         const data = await response.json();
         setViewData(data);
@@ -81,7 +81,7 @@ export default function index({ categories, products }) {
                 </div>
             </div>
             <PageChart
-                last7DaysArray={getLast7Days()}
+                last7DaysArray={getLast7Days().reverse()}
                 valuesArray={viewData}
                 title={selectedRecordTitle}
             />
