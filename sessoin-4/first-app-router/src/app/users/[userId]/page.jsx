@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function ({params}) {
+export default async function (props) {
+    const params = await props.params
     const responses = await fetch(`https://rickandmortyapi.com/api/character/${params.userId}`);
     const user = await responses.json();
     return (
