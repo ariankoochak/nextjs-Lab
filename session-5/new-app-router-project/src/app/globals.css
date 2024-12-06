@@ -55,3 +55,7 @@ img{
 .product-card .image-container{
   width: 100%;
 }
+
+.product-image-container{
+  width: 400px;
+}
