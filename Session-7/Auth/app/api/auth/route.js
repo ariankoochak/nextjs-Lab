@@ -11,6 +11,15 @@ export async function POST(request) {
   return NextResponse.json({ message: "success" });
 }
 
+
+export async function DELETE(req){
+  const cookieStore = await cookies();
+
+  cookieStore.delete('accessToken');
+
+  return NextResponse.redirect(new URL("/login", req.url));
+}
+
 const JWTgenerate = async (payload) => {
   const header = {
     alg: "HS256",
