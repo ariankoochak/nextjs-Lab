@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+import { Schema, model, models } from "mongoose";
 
 const contactsSchema = new Schema(
     {
@@ -10,5 +10,7 @@ const contactsSchema = new Schema(
     { timestamps: true }
 );
 
-const contactsModel = model("contacts", contactsSchema);
+
+const contactsModel = models.contacts || model("contacts", contactsSchema);
+
 export default contactsModel;
