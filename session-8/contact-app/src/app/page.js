@@ -20,14 +20,16 @@ export default async function page() {
       return (
           <>
               <div key={contact._id}>
-                  <span>name : {contact.Name}</span>
+                  <span>
+                      name : {contact.Name} | Phone Number : {contact.PhoneNumber}
+                  </span>
+                  <br/>
+                  <Link href={`/submit-contact/${contact._id}`}>Edit</Link>
                   <br />
-                  <span>Phone Number : {contact.PhoneNumber}</span>
+                  <br />
+                  <br />
+                  <br />
               </div>
-              <br />
-              <br />
-              <br />
-              <br />
           </>
       );
     })}
