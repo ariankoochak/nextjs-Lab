@@ -13,7 +13,7 @@ export default async function page() {
   
   return (
     <>
-    <Link href='/add-new-contact'>
+    <Link href='/submit-contact'>
       <button>add new contact</button>
     </Link>
     {contacts.map((contact)=>{
