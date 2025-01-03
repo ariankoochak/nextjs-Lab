@@ -18,13 +18,17 @@ export default async function page() {
     </Link>
     {contacts.map((contact)=>{
       return (
-        <>
-          <div key={contact._id}>
-              <span>name : {contact.Name}</span>
-              <span>Phone Number : {contact.PhoneNumber}</span>
-          </div>
-          <br/>
-        </>
+          <>
+              <div key={contact._id}>
+                  <span>name : {contact.Name}</span>
+                  <br />
+                  <span>Phone Number : {contact.PhoneNumber}</span>
+              </div>
+              <br />
+              <br />
+              <br />
+              <br />
+          </>
       );
     })}
     </>
